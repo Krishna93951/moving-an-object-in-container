@@ -1,14 +1,14 @@
 function View(rootElementId) {
   this.root = document.querySelector(rootElementId);
-
+  
   this.init = function() {
     this.createContainer();
     this.createObject();
     this.createButtonContainer();
     this.createUpButton();
     this.createDownButton();
-    this.createRightButton();
     this.createLeftButton();
+    this.createRightButton();
   };
 
   this.createElement = function(element, attributes) {
@@ -28,6 +28,7 @@ function View(rootElementId) {
   };
 
   this.appendContainer = function(element) {
+
     this.root.querySelector("#container").append(element);
   };
 
@@ -75,6 +76,7 @@ function View(rootElementId) {
       _this.root.dispatchEvent(customEvent);
     });
   };
+
 }
 
 module.exports = { viewInstance: View };

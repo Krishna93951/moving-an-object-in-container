@@ -1,18 +1,31 @@
+#root{
+  display: flex;
+}
+
 #container{
+  position: relative;
   background-color: black;
-  height: 600px;
+  height: 400px;
   width: 600px;
 }
 
 #object{
+  position: absolute;
   background-color: violet;
   height: 100px;
   width: 100px;
+  border-radius: 50%;
 }
 
 #btn-container{
-  width: 600px;
-  height: 80px;
-  background-color: blue;
+  display: inline-block;
+  height: 30px;
+}
+
+#up,#down,#right,#left{
+  width: 150px;
+  height: 100px;
+  padding: 5px;
+  display: block ;
 }
 
