@@ -12,9 +12,9 @@ function App(viewInstance,objectId) {
   this.attachEvent = function (){
     this.objectElement = this.rootElement.querySelector(objectId);
     var event ={
-      onRight:this.horizontalMovement().onRight,
+      onRight:this.horizontalMovement().onRight.bind(this),
       onDown:this.onDown.bind(this),
-      onLeft:this.horizontalMovement().onLeft,
+      onLeft:this.horizontalMovement().onLeft.bind(this),
       onUp:this.onUp.bind(this)
     };
     for(var key in event){
@@ -23,18 +23,27 @@ function App(viewInstance,objectId) {
   }
 
   this.horizontalMovement = function (){
-  
-    function onRight(){
-      if (this.objLeft < 500) {
-      return this.objLeft += 10;
+    var maxWidth = 480;
+    var minWidth = 320;
+  return {
+   onRight: function (){
+     debugger
+      if (this.objLeft < maxWidth ) {
+        if(this.objLeft < minWidth){
+      this.objLeft += 10;
+        }
       }
-    }
-    function onLeft(){
+       return this.objectElement.style.left = this.objLeft + "px";
+    },
+    onLeft: function (){
       if (this.objLeft >0) {
-      return this.objLeft -= 10;
+      this.objLeft -= 10;
       }
+      return this.objectElement.style.left = this.objLeft + "px";
     }
-    return this.objectElement.style.left = this.objLeft + "px";  
+    
+  }
+    
   }
 
   // this.onRight = function() {

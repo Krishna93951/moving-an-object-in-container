@@ -1,5 +1,7 @@
 function View(rootElementId) {
   this.root = document.querySelector(rootElementId);
+}
+
   
   this.init = function() {
     this.createContainer();
@@ -77,6 +79,5 @@ function View(rootElementId) {
     });
   };
 
-}
 
 module.exports = { viewInstance: View };
