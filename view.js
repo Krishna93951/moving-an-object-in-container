@@ -1,9 +1,7 @@
 function View(rootElementId) {
   this.root = document.querySelector(rootElementId);
-}
 
-  
-  this.init = function() {
+   this.init = function() {
     this.createContainer();
     this.createObject();
     this.createButtonContainer();
@@ -78,6 +76,10 @@ function View(rootElementId) {
       _this.root.dispatchEvent(customEvent);
     });
   };
+}
+
+  
+ 
 
 
 module.exports = { viewInstance: View };
